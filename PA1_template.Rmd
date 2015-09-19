@@ -1,9 +1,4 @@
----
-title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
----
+
 # Reproducible Research: Peer Assessment 1  
 
 This assigment makes use of data from a personal activity monitoring device that collects data at 5 minute intervals through out the day. The data consists of two months of data from an anonymous individual collected during the months of October and November, 2012.  
@@ -59,7 +54,7 @@ axis(1, at=seq(0, 24, by=4), labels=paste(seq(0, 24, by=4), ":00"))
 The maximum number of steps is
 ```{r}
 row <- filter(steps_int, mean_steps==max(steps_int$mean_steps))
-row$mean_steps
+sprintf("%0.1f", row$mean_steps)
 ```
 
 which ocurrs in the interval starting at
@@ -113,4 +108,4 @@ g <- ggplot(steps_int, aes(x=interval/100, y=mean_steps)) +
 print(g)
 ```  
 
-Overall, we can see that more levels of activity taken place during the weekends and activity tends to start later.
+Overall, we can see that more levels of activity take place during the weekends and activity tends to start later.
